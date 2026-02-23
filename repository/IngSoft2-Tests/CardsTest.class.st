@@ -123,7 +123,7 @@ CardsTest >> test05WhenUsedAllyCardThenBothSpaceshipFuelsGoDown [
 	aSpaceship1 turn: 6.
 	aSpaceship1 turn:6 playCard: allyCard against: aSpaceship2 in: aGame.
 	
-	self assert: aSpaceship2 fuel equals: 8
+	self assert: aSpaceship2 fuelTank fuel equals: 8
 ]
 
 { #category : 'tests' }
@@ -138,8 +138,8 @@ CardsTest >> test06WhenAllyRunsOutOfFuelThenBothRunOutOfFuel [
 	aSpaceship1 turn: 6.
 	aSpaceship1 turn:15 playCard: allyCard against: aSpaceship2 in: aGame.
 	
-	self assert: aSpaceship1 fuel equals: 0.
-	self assert: aSpaceship2 fuel equals: 0
+	self assert: aSpaceship1 fuelTank fuel equals: 0.
+	self assert: aSpaceship2 fuelTank fuel equals: 0
 ]
 
 { #category : 'tests' }

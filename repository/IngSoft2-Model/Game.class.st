@@ -153,3 +153,8 @@ Game >> skipTurn [
 Game >> spaceships [
 	^ spaceships 
 ]
+
+{ #category : 'accessing' }
+Game >> turn [
+	^turnNumber .
+]

@@ -35,24 +35,20 @@ Spaceship class >> withName: aName withBoard:aBoard withMaxFuel: maxFuel withCar
 	^ self new initializeWith: aName withBoard: aBoard  withMaxFuel: maxFuel withCards: cards
 ]
 
+{ #category : 'accessing' }
+Spaceship >> ally [
+^ally
+]
+
 { #category : 'as yet unclassified' }
 Spaceship >> allyWith: aSpaceship [
-	ally := aSpaceship.
+	ally := ActiveAlliance with:aSpaceship .
 	
 ]
 
 { #category : 'as yet unclassified' }
-Spaceship >> askForFuel: fuelNeeded [
-	ally ifNil: [ ^false ].
-	^ally shareFuel: fuelNeeded
-]
-
-{ #category : 'as yet unclassified' }
 Spaceship >> breakAlliance [
-	|lostAlly|
-	lostAlly :=ally.
-	ally := nil.
-	^lostAlly .
+	ally:=NoAlliance new.
 	
 ]
 
@@ -87,9 +83,11 @@ Spaceship >> drawCard: aCard [
 	cards add: aCard
 ]
 
-{ #category : 'accessing' }
-Spaceship >> fuel [
-	^ fuelTank fuel
+{ #category : 'as yet unclassified' }
+Spaceship >> fuelTank [
+	^fuelTank 
+	
+	
 ]
 
 { #category : 'as yet unclassified' }
@@ -131,7 +129,7 @@ Spaceship >> initializeWith: aName withBoard: aBoard withMaxFuel: aMaxFuel withC
 	exitRoll := 0.
 	cards := someCards.
 	minusMoves :=0.
-	ally := nil.
+	ally:=NoAlliance new.
 	rollAddOn := 0.
 	jailTime :=0.
 ]
@@ -229,13 +227,6 @@ Spaceship >> refuel [
 Spaceship >> resetToStartWithoutFuelLoss [
 
 	position := position backToZero.
-]
-
-{ #category : 'as yet unclassified' }
-Spaceship >> shareFuel: fuelNeeded [
-	^fuelTank shareFuel: fuelNeeded from: self.
-	
-	
 ]
 
 { #category : 'logic' }

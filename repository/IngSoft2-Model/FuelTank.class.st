@@ -59,7 +59,7 @@ FuelTank >> useFuel: numberOfTiles from: spaceship [
 
 	fuel := fuel - numberOfTiles abs.
 	fuel > 0 ifTrue: [ ^self ].
-	(spaceship askForFuel: fuel abs) ifTrue: [ ^self ].
+	((spaceship ally) shareFuel: fuel abs) ifTrue: [ ^self ].
 	spaceship penalize.
 	fuel := 0.
 ]

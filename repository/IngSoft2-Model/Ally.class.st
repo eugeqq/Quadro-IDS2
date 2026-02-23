@@ -1,6 +1,10 @@
 Class {
 	#name : 'Ally',
 	#superclass : 'CardAction',
+	#instVars : [
+		'ship1',
+		'ship2'
+	],
 	#category : 'IngSoft2-Model',
 	#package : 'IngSoft2-Model'
 }
@@ -12,7 +16,9 @@ Ally class >> className [
 
 { #category : 'as yet unclassified' }
 Ally >> actOn: aSpaceship from: aCardSpaceship during: aGame [
-	"aGame addCard: self against:aSpaceship ."
+	ship1:=aSpaceship.
+	ship2:=aCardSpaceship .
+
 	aGame cards add: self against: aSpaceship .
 	aCardSpaceship allyWith: aSpaceship.
 	aSpaceship allyWith: aCardSpaceship .
@@ -27,6 +33,8 @@ Ally >> actOn: aSpaceship from: aCardSpaceship in: aGame [
 
 { #category : 'removing' }
 Ally >> removeAction:aSpaceship in:aGame [
-	(aSpaceship breakAlliance)breakAlliance .
+	
+	ship1 breakAlliance.
+  	ship2 breakAlliance.
 	
 ]
