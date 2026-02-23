@@ -15,7 +15,7 @@ CardManager class >> of: aGame [
 	^self new initializeOf:aGame.
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 CardManager >> activeCardsCount [ 
 	^ permanentCards size
 ]

@@ -44,7 +44,7 @@ Game >> addExtraTurn [
 	extraTurn :=extraTurn +1.
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'logic' }
 Game >> advanceTurn [
 	extraTurn > 0 ifTrue: [ 
         extraTurn := extraTurn - 1. 
@@ -87,7 +87,7 @@ Game >> maximumValueOfDice [
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'logic' }
 Game >> modifyRollAll: aNumber [
 	
 	spaceships do: [ :ship | ship modifyRoll: aNumber ].
@@ -123,7 +123,7 @@ Game >> ranking [
         shipA isAheadOf: shipB ]
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'logic' }
 Game >> reverseTurns [
 	direction :=direction negated.
 	
@@ -137,7 +137,7 @@ Game >> rollDices [
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'logic' }
 Game >> saveLastEffect: aBlock [
 	lastEffect :=aBlock .
 ]

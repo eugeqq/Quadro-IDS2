@@ -22,7 +22,7 @@ FuelTank >> fuel [
 	^fuel
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'moving' }
 FuelTank >> increaseSize:aNumber [
 	maxFuel := maxFuel +aNumber.
 

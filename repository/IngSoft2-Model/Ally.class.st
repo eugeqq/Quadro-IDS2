@@ -14,7 +14,7 @@ Ally class >> className [
 	'Ally'.
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'effects' }
 Ally >> actOn: aSpaceship from: aCardSpaceship during: aGame [
 	ship1:=aSpaceship.
 	ship2:=aCardSpaceship .
@@ -25,7 +25,7 @@ Ally >> actOn: aSpaceship from: aCardSpaceship during: aGame [
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'effects' }
 Ally >> actOn: aSpaceship from: aCardSpaceship in: aGame [
 	Error signal:'Permanent Card can only be played turing turn'
 
