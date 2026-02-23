@@ -12,7 +12,8 @@ Ally class >> className [
 
 { #category : 'as yet unclassified' }
 Ally >> actOn: aSpaceship from: aCardSpaceship during: aGame [
-	aGame addCard: self against:aSpaceship .
+	"aGame addCard: self against:aSpaceship ."
+	aGame cards add: self against: aSpaceship .
 	aCardSpaceship allyWith: aSpaceship.
 	aSpaceship allyWith: aCardSpaceship .
 

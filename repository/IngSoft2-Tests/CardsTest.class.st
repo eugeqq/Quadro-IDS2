@@ -201,7 +201,7 @@ CardsTest >> test10WhenUsedACancellationCardThenAPermanentCardIsEliminated [
 	aSpaceship2 drawCard: cancellationCard.
 	aSpaceship1 turn: 2 playCard: accelerationCard against: nil in: aGame .
 	aSpaceship2 useCancellationOn: accelerationCard inGame: aGame.
-	self assert: aGame permanentCards equals: 0
+	self assert: aGame cards cards equals: 0
 ]
 
 { #category : 'tests' }
@@ -283,7 +283,7 @@ CardsTest >> test15WhenRedoCardUsedPlaysLatestPlayedCard [
 	self
 		assert: aSpaceship2 position equals: (Position in: 2 at: 0);
 		assert: aSpaceship1 position equals: (Position in: 3 at: 0);
-		assert: aGame permanentCards equals: 2
+		assert: aGame cards cards equals: 2
 ]
 
 { #category : 'tests' }
@@ -298,7 +298,7 @@ CardsTest >> test16WhenNotCardsInGameThenRedoNoEffect [
 	aSpaceship2 turn: 3.
 	self
 		assert: aSpaceship2 position equals: (Position in: 3 at: 0);
-		assert: aGame permanentCards equals: 0
+		assert: aGame cards cards equals: 0
 ]
 
 { #category : 'tests' }
@@ -319,7 +319,7 @@ CardsTest >> test17WhenRedoCardUsedPlaysLatestAccelerationCard [
 	self
 		assert: aSpaceship2 position equals: (Position in: 8 at: 0);
 		assert: aSpaceship1 position equals: (Position in: 4 at: 0);
-		assert: aGame permanentCards equals: 2
+		assert: aGame cards cards equals: 2
 ]
 
 { #category : 'tests' }

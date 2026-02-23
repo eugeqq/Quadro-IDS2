@@ -261,7 +261,7 @@ Spaceship >> useCancellationOn: cardToRemove inGame: aGame [
 	| cancellationCard |
 	cancellationCard := cards detect: [:c | c action class = Cancellation] ifNone: [ Error signal:'No cancellation card was found' ].
 	cards remove: cancellationCard.
-	aGame removeCard: cardToRemove . 
+	aGame cards removeCard: cardToRemove . 
    ^cancellationCard 
 ]
 
